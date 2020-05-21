@@ -12,7 +12,7 @@ const user = {
 
 ReactDOM.render(
   <Comment
-    user={user}
+    author={user}
     text="Good job"
     date={new Date()}
   />,

@@ -1,7 +1,10 @@
-import React from "react";
-import moment from "moment";
+import React from 'react';
+import moment from 'moment';
 
-const formatDate = (date) => moment(date).format("DD MMM YY");
+
+const formatDate = (date) => {
+  return moment(date).format("DD MMM YY");
+}
 
 const Profile = (props) => {
   return (

@@ -10,4 +10,7 @@ const userData = {
   birthPlace: 'London'
 };
 
+const rootElem = document.querySelector("#root");
+
+ReactDOM.render(<Profile user={userData} />, rootElem);
 

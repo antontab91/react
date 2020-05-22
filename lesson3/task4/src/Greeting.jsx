@@ -7,7 +7,7 @@ const actualData = (data) => {
 const Greeting = (props) => {
   return (
     <div className="greeting">
-      {`My name is ${props.firstName} ${props.lastName}. I'm 17 years old`}
+      {`My name is ${props.firstName} ${props.lastName}. I'm ${actualData(props.birthDate)} years old`}
     </div>
   )
 }

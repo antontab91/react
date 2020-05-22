@@ -2,7 +2,9 @@ import React from "react";
 import moment from "moment";
 import "./profile.scss";
 
-const formatDate = (date) => moment(date).format("DD MMM YY");
+const formatDate = (date) => {
+  return moment(date).format("DD MMM YY");
+}
 
 const Profile = (props) => {
   return (
@@ -13,7 +15,7 @@ const Profile = (props) => {
       <div className="profile__birth">
         {`Was born ${formatDate(props.userData.birthDate)} in ${
           props.userData.birthPlace
-        }`}
+          }`}
       </div>
     </div>
   );

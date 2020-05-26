@@ -1,32 +1,26 @@
 import React, { Component } from 'react';
-import './counter.scss';
 
-let counter = 0;
-
-
-
-
-class Counter extends Component {
-    constructor() {
-        super();
+class Counter extends Component{
+    constructor (props) {
+        super(props);
         this.state = {
-            counter: 0,
+            counter: props.start || 0,
         };
-
+        
         setInterval(() => {
             this.setState({
-                counter: this.state.counter + 1,
-            });
-            counter = counter + 1;
-        }, 1000);
+                counter: this.state.counter + 1
+            });  
+        }, props.interval || 1000);
     }
 
-
-    render() {
+    render () {
         return (
-            <div className="counter">{this.state.counter}</div>
+            <div className="counter">
+                {this.state.counter}
+            </div>
         );
     }
-}
+};
 
 export default Counter;

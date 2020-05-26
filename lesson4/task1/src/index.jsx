@@ -1,10 +1,18 @@
-import React from "react";
-import ReactDom from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import "./index.scss";
+import App from './App.jsx';
+
+
+
 
 const rootElement = document.querySelector("#root");
 
-const element = <div></div>
+// const element = React.createElement(
+//   'div',
+//   { className: 'greeting' },
+//   'Hello, React!'
+// );
 
 
-ReactDom.render(element, rootElement);
+ReactDOM.render(<App />, rootElement);

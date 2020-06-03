@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class ConnectionStatus extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             status: 'online',
@@ -14,22 +14,22 @@ class ConnectionStatus extends Component {
         });
     }
 
-    componentDidMount() {
-        window.addEventListener('online', this.updateStatus);
-        window.addEventListener('offline', this.updateStatus);
-    }
+    // componentDidMount() {
+    //     window.addEventListener('online', this.updateStatus);
+    //     window.addEventListener('offline', this.updateStatus);
+    // }
 
-    componentWillUnmount() {
-        window.removeEventListener('online', this.updateStatus);
-        window.removeEventListener('offline', this.updateStatus);
-    }
+    // componentWillUnmount() {
+    //     window.removeEventListener('online', this.updateStatus);
+    //     window.removeEventListener('offline', this.updateStatus);
+    // }
 
-    setOfflineClass = status => 
-        `status ${status === 'offline' ? 
+    setOfflineClass = status =>
+        `status ${status === 'offline' ?
             'status_offline' : ''}`;
 
     render() {
-        return(
+        return (
             <div className={this.setOfflineClass(this.state.status)}>
                 {this.state.status}
             </div>

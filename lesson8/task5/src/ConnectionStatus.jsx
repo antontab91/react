@@ -14,15 +14,15 @@ class ConnectionStatus extends Component {
         });
     }
 
-    // componentDidMount() {
-    //     window.addEventListener('online', this.updateStatus);
-    //     window.addEventListener('offline', this.updateStatus);
-    // }
+    componentDidMount() {
+        window.addEventListener('online', this.updateStatus);
+        window.addEventListener('offline', this.updateStatus);
+    }
 
-    // componentWillUnmount() {
-    //     window.removeEventListener('online', this.updateStatus);
-    //     window.removeEventListener('offline', this.updateStatus);
-    // }
+    componentWillUnmount() {
+        window.removeEventListener('online', this.updateStatus);
+        window.removeEventListener('offline', this.updateStatus);
+    }
 
     setOfflineClass = status =>
         `status ${status === 'offline' ?

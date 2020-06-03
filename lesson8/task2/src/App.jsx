@@ -23,7 +23,7 @@ class App extends Component {
                     Toggle
                 </button>
                 <div className="section__clock">{this.state.visible && <>
-                    {/* <Clock location={"London"} offset={0} /> */}
+                    <Clock location={"London"} offset={0} />
                     <Clock location={"Paris"} offset={2} />
                     <Clock location={"Tokyo"} offset={9} /></>}
                 </div>

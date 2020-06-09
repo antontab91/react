@@ -7,11 +7,11 @@ class SearchBar extends Component {
         this.handleInStockChange = this.handleInStockChange.bind(this);
     }
 
-    // handleFilterTextChange = e =>
-    //     this.props.onFilterTextChange(e.target.value);
+    handleFilterTextChange = e =>
+        this.props.onFilterTextChange(e.target.value);
 
-    // handleInStockChange = e =>
-    //     this.props.onInStockChange(e.target.checked);
+    handleInStockChange = e =>
+        this.props.onInStockChange(e.target.checked);
 
     render() {
 

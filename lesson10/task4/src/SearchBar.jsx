@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -11,28 +11,28 @@ class SearchBar extends Component {
         this.props.onFilterTextChange(e.target.value);
 
     handleInStockChange = e =>
-    this.props.onInStockChange(e.target.checked);
+        this.props.onInStockChange(e.target.checked);
 
-    render() {
+    // render() {
 
-        return (
-            <form>
-                <input type="text" 
-                    placeholder="Search..."
-                    value={this.props.filterText}
-                    onChange={this.handleFilterTextChange}
-                />
-                <p>
-                    <input type="checkbox"
-                        checked={this.props.inStockOnly}
-                        onChange={this.handleInStockChange} 
-                    />
-                    {' '}
-                    Only show products in stock
-                </p>
-            </form>
-        );
-    }
+    //     return (
+    //         <form>
+    //             <input type="text" 
+    //                 placeholder="Search..."
+    //                 value={this.props.filterText}
+    //                 onChange={this.handleFilterTextChange}
+    //             />
+    //             <p>
+    //                 <input type="checkbox"
+    //                     checked={this.props.inStockOnly}
+    //                     onChange={this.handleInStockChange} 
+    //                 />
+    //                 {' '}
+    //                 Only show products in stock
+    //             </p>
+    //         </form>
+    //     );
+    // }
 }
 
 export default SearchBar;

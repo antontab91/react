@@ -32,11 +32,11 @@ class Calculator extends Component {
         };
     }
 
-    // handleCelsiusChange = (temperature) =>
-    //     this.setState({
-    //         scale: 'c',
-    //         temperature,
-    //     });
+    handleCelsiusChange = (temperature) =>
+        this.setState({
+            scale: 'c',
+            temperature,
+        });
 
     handleFahrenheitChange = (temperature) =>
         this.setState({

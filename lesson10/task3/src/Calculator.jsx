@@ -54,19 +54,19 @@ class Calculator extends Component {
             tryConvert(temperature, toFahrenheit) :
             temperature;
         return (
-            <div>
-                <TemperatureInput scale="c"
-                    temperature={celsius}
-                    onTemperatureChange={this.handleCelsiusChange}
-                />
-                <TemperatureInput scale="f"
-                    temperature={fahrenheit}
-                    onTemperatureChange={this.handleFahrenheitChange}
-                />
-                <BoilingVerdict
-                    celsius={parseFloat(celsius)}
-                />
-            </div>
+            // <div>
+            //     <TemperatureInput scale="c"
+            //         temperature={celsius}
+            //         onTemperatureChange={this.handleCelsiusChange}
+            //     />
+            //     <TemperatureInput scale="f"
+            //         temperature={fahrenheit}
+            //         onTemperatureChange={this.handleFahrenheitChange}
+            //     />
+            //     <BoilingVerdict
+            //         celsius={parseFloat(celsius)}
+            //     />
+            // </div>
         );
     }
 }

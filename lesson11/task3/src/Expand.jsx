@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 /* import '../node_modules/font-awesome/css/font-awesome.min.css';
 import 'font-awesome/css/font-awesome.min.css'; */
@@ -11,21 +11,21 @@ class Expand extends Component {
         };
     }
 
-    showContent = () => 
-        this.setState({
-            isOpen: !this.state.isOpen,
-        });
+    // showContent = () => 
+    //     this.setState({
+    //         isOpen: !this.state.isOpen,
+    //     });
 
     render() {
-        const button = this.state.isOpen ? 
+        const button = this.state.isOpen ?
             (<i className="fas fa-angle-up"></i>) :
             (<i className="fas fa-angle-down"></i>);
-        const content = this.state.isOpen &&    
+        const content = this.state.isOpen &&
             (<div className="expand__content">
                 {this.props.children}
             </div>);
 
-        return(
+        return (
             <div className="expand border">
                 <div className="expand__header">
                     <span className="expand__title">
@@ -33,7 +33,7 @@ class Expand extends Component {
                     </span>
                     <button className="expand__toggle-btn"
                         onClick={this.showContent}>
-                            {button}
+                        {button}
                     </button>
                 </div>
                 {content}

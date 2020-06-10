@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-/* import '../node_modules/font-awesome/css/font-awesome.min.css';
-import 'font-awesome/css/font-awesome.min.css'; */
+
 
 class Expand extends Component {
     constructor(props) {
@@ -11,10 +10,10 @@ class Expand extends Component {
         };
     }
 
-    // showContent = () => 
-    //     this.setState({
-    //         isOpen: !this.state.isOpen,
-    //     });
+    showContent = () =>
+        this.setState({
+            isOpen: !this.state.isOpen,
+        });
 
     render() {
         const button = this.state.isOpen ?

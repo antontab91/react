@@ -21,18 +21,18 @@ class CreateTaskInput extends Component {
 
     render() {
         return (
-            // <div className="create-task">
-            //     <input type="text"
-            //         className="create-task__input" 
-            //         value={this.state.value}
-            //         onChange={this.handleChange}
-            //     />
-            //     <button className="btn create-task__btn"
-            //         onClick={this.handleTaskCreate}
-            //     >
-            //         Create
-            //     </button>
-            // </div>
+            <div className="create-task">
+                <input type="text"
+                    className="create-task__input"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                />
+                <button className="btn create-task__btn"
+                    onClick={this.handleTaskCreate}
+                >
+                    Create
+                </button>
+            </div>
         );
     }
 };

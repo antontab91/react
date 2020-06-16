@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDom from "react-dom";
+import ReactDOM, { render } from "react-dom";
 
-
-const rootElement = document.querySelector('#root');
+const root = document.querySelector('#root');
 
 const element = (
   <>
@@ -14,4 +13,4 @@ const element = (
   </>
 );
 
-ReactDom.render(element, rootElement);
+ReactDOM.render(element, root);

@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDom from "react-dom";
-import "./styles.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styles.css';
 
+const root = document.querySelector('#root');
 
-const rootElement = document.querySelector('#root');
 const style = {
-  color: "red",
+  color: 'red',
   fontWeight: 700
-};
+}
 
 const element = (
   <main className="page">
@@ -17,7 +17,8 @@ const element = (
         <label className="form-label" htmlFor="name">Name</label>
         <input
           className="form-input"
-          type="text" id="name"
+          type="text"
+          id="name"
           name="name"
           value="anonymous"
         />
@@ -30,11 +31,11 @@ const element = (
           value="17"
           name="age"
         />
-        <span style={style} > To young</span>
+        <span style={style}>To young</span>
       </div>
       <button className="submit-button" type="submit">Submit</button>
     </form>
-  </main >
-);
+  </main>
+)
 
-ReactDom.render(element, rootElement);
+ReactDOM.render(element, root);

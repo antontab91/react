@@ -1,8 +1,5 @@
-import React from "react";
-import ReactDom from "react-dom";
-import "./search.scss";
-
-
+import React from 'react';
+import './search.scss';
 
 export default (props) => {
   return (
@@ -13,6 +10,6 @@ export default (props) => {
         <button className="search__button">Search</button>
       </div>
     </div>
-  );
-};
+  )
+}
 

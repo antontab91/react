@@ -1,20 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Comment from './Comment';
+import Comment from './Comment.jsx';
 
-const rootElem = document.querySelector('#root');
+const root = document.querySelector("#root");
 
-const user ={
-    name: 'Tom',
-    avatarUrl: 'https://avatars3.githubusercontent.com/u10001'
-  }
+const user = {
+  avatarUrl: 'https://www.sololearn.com/Icons/Avatars/4604247.jpg',
+  name: "Tom",
+}
 
-ReactDOM.render(
-    <Comment
-      author={user}
-      text="Good job"
-      date={new Date()}
-    />,
-    rootElem
-);
+ReactDOM.render(<Comment user={user} text="Good job!" date={new Date()} />, root)

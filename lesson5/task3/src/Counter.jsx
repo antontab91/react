@@ -6,36 +6,32 @@ class Counter extends React.Component {
         this.state = {
             counter: 0,
         }
-        this.decrease = this.decrease.bind(this);
+        this.decrement = this.decrement.bind(this);
     }
 
-    decrease() {
+    decrement() {
         this.setState({
             counter: this.state.counter - 1,
-        });
+        })
     }
-
-    increase = () => {   //это эксперементальная запись
+    increment = () => {
         this.setState({
             counter: this.state.counter + 1,
         })
     }
-
     reset() {
         this.setState({
             counter: 0,
         })
     }
-
-
     render() {
         return (
             <div className="counter">
-                <button data-action="decrease" onClick={this.decrease} className="counter__button">-</button>
-                <span className="counter__value" onClick={() => { return this.reset() }}> {this.state.counter}</span>
-                <button data-action="increase" onClick={this.increase} className="counter__button">+</button>
-            </div>
-        );
+                <button className="counter__button" onClick={this.decrement}>-</button>
+                <span className="counter__value" onClick={() => this.reset()}>{this.state.counter}</span>
+                <button className="counter__button" onClick={this.increment}>+</button>
+            </div>)
     }
 }
 export default Counter;
+

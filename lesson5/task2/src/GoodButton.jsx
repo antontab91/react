@@ -8,8 +8,9 @@ class GoodButton extends React.Component {
 
     render() {
         return (
-            <button onClick={this.myAlert} className="fancy-button">Click me</button>
+            <button onClick={this.myAlert} className="fancy-button">Click me!</button>
         )
     }
 }
 export default GoodButton;
+

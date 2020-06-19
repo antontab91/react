@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 class GoodButton extends React.Component {
 
     myAlert(event) {

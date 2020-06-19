@@ -1,7 +1,7 @@
 import React from 'react';
 
-const myAlert = () => {
-    alert('Good job!');
+const myAlert = (event) => {
+    alert(event.target.textContent)
 }
 
 class GoodButton extends React.Component {

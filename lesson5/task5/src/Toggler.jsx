@@ -1,30 +1,24 @@
-import React from 'react';
+import React, { Component } from "react";
 
-// const offText = 'Off';
-// const onText = 'On';
-
-class Toggler extends React.Component {
-
+class Toggle extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       isToggleOn: false
-    }
+    };
   }
-
-  setOnfOff() {
+  handleClick = () => {
     this.setState({
-      isToggleOn: !this.state.isToggleOn,
-    })
-  }
-
+      isToggleOn: !this.state.isToggleOn
+    });
+  };
   render() {
     return (
-      <div onClick={this.setOnfOff.bind(this)} className="toggler">{this.state.isToggleOn ? "On" : "Off"}</div>
-    )
+      <div onClick={this.handleClick} className="toggler">
+        {this.state.isToggleOn ? "On" : "Off"}
+      </div>
+    );
   }
 }
 
-export default Toggler;
-
-
+export default Toggle;

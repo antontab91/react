@@ -1,6 +1,6 @@
-const CORAL = "coral";
-const AQUA = "aqua";
-const BISQUE = "bisque";
+const CORAL = "Coral";
+const AQUA = "Aqua";
+const BISQUE = "Bisque";
 
 import React from 'react';
 

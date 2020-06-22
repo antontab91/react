@@ -7,14 +7,14 @@ class Toggler extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state{
+    this.state = {
       isToggleOn: false
     }
   }
 
-  setOnfOff(event) {
+  setOnfOff() {
     this.setState({
-      isToggleOn: !this.state.isToggleOn
+      isToggleOn: !this.state.isToggleOn,
     })
   }
 

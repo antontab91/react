@@ -9,7 +9,7 @@ class ColorPicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'dsa'
+      title: ''
     }
   }
 
@@ -29,7 +29,7 @@ class ColorPicker extends React.Component {
     return (
       <>
         <div>
-          <div className="picker__title">
+          <div className="picker__title" style={{ textTransform: "capitalize" }}>
             {this.state.title}
           </div>
           <div>

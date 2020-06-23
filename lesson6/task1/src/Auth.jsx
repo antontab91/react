@@ -6,36 +6,20 @@ import Login from './Login';
 class Auth extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            isLoggedIn: false,
-        };
-    }
-
-    handleLogIn = () => {
-        this.setState({
-            isLoggedIn: true,
-        });
-    }
-
-    handleLogOut = () => {
-        this.setState({
-            isLoggedIn: false,
-        })
     }
 
     render() {
         return (
-            <div className="panel">
-                <Greeting isLoggedIn={this.state.isLoggedIn} />
-                <div>
-                    {(!this.state.isLoggedIn) ?
-                        <Login onLogin={this.handleLogIn} /> :
-                        <Logout onLogout={this.handleLogOut} />
-                    }
+            <>
+                <div className='panel'>
+                    <Greeting />
+                    <div>
+                        <Login />
+                    </div>
                 </div>
-            </div>
-        );
+            </>
+        )
     }
 }
+
 export default Auth;

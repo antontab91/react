@@ -10,6 +10,9 @@ class Auth extends React.Component {
     this.state = {
       isLoggedIn: false,
     }
+
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleLogin() {
@@ -27,8 +30,8 @@ class Auth extends React.Component {
   render() {
 
     let button = this.state.isLoggedIn
-      ? <Logout onLogout={this.handleLogout.bind(this)} />
-      : <Login onLogin={this.handleLogin.bind(this)} />
+      ? <Logout onLogout={this.handleLogout} />
+      : <Login onLogin={this.handleLogin} />
 
     return (
       <div>

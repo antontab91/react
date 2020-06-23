@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Auth from './Auth.jsx'
+import Auth from './Auth.jsx';
 
 const App = () => {
   return (
@@ -9,3 +8,4 @@ const App = () => {
 }
 
 export default App;
+

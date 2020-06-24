@@ -1,35 +1,55 @@
-import React, {Component} from 'react';
-import Message from './Message';
+import React from 'react';
+import Message from './Message.jsx';
 
 const text1 = 'Hello, world!';
 const text2 = 'Another exciting text.';
 
-class Page extends Component {
-    constructor(props) {
-        super(props)
-        this.state ={
-            text: null,
-        };
-    }
+class Page extends React.Component {
+  constructor(props) {
+    super(props)
 
-    setText = text => {
-        this.setState ({
-            text
-        });
+    this.state = {
+      text: ''
     };
 
-    render() {
-        return (
-            <div className="page">
-                <Message text={this.state.text}/>
-                <div className="actions">
-                    <button className="btn" onClick={() => this.setText(text1)}> text 1</button>
-                    <button className="btn" onClick={() => this.setText(text2)}> text 2 </button>
-                    <button className="btn" onClick={() => this.setText('')}> Clear </button>
-                </div>
-            </div>
-        );
-    }
+    this.setHelloText = this.setHelloText.bind(this);
+    this.setAnotherText = this.setAnotherText.bind(this);
+    this.resetText = this.resetText.bind(this);
+  }
+
+  setHelloText() {
+    this.setState({
+      text: text1,
+    });
+  }
+
+  setAnotherText() {
+    this.setState({
+      text: text2,
+    });
+  }
+
+  resetText() {
+    this.setState({
+      text: '',
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Message text={this.state.text} />
+        <div>
+          <button onClick={this.setHelloText} className="btn"></button>
+          <button onClick={this.setAnotherText} className="btn"></button>
+          <button onClick={this.resetText} className="btn"></button>
+        </div>
+      </div>
+
+
+
+    )
+  }
 }
 
 export default Page;

@@ -45,9 +45,6 @@ class Page extends React.Component {
           <button onClick={this.resetText} className="btn"></button>
         </div>
       </div>
-
-
-
     )
   }
 }

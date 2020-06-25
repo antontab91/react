@@ -1,9 +1,10 @@
 import React from 'react';
-import Spinner from './Spinner.jsx';
+import Auth from './Auth.jsx';
+
 
 const App = () => {
   return (
-    <div>sds</div>
+    <Auth />
   )
 }
 

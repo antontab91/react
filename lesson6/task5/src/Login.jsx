@@ -2,7 +2,7 @@ import React from 'react';
 
 const Login = ({ onLogin }) => {
     return (
-        <button class="login btn">Login</button>
+        <button onClick={onLogin} className="login btn">Login</button>
     )
 }
 

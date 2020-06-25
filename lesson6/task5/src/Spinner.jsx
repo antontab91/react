@@ -7,7 +7,7 @@ const Spinner = ({ size }) => {
     }
 
     return (
-        <span style={{ style }} class="spinner" ></span >
+        <span style={{ style }} className="spinner" ></span >
     )
 }
 

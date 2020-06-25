@@ -6,22 +6,22 @@ class Status extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOffline: true,
+      isOnline: false,
     }
 
   }
 
   render() {
     return (
-      <>
+      <div className="status">
 
         {
-          this.state.isOffline
+          this.state.isOnline
             ? <Online />
             : <Offline />
         }
 
-      </>
+      </div>
     )
   }
 }

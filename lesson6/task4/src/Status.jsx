@@ -6,7 +6,7 @@ class Status extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOnline: true,
+      isOffline: true,
     }
 
   }
@@ -16,7 +16,7 @@ class Status extends React.Component {
       <>
 
         {
-          this.state.isOnline
+          this.state.isOffline
             ? <Online />
             : <Offline />
         }

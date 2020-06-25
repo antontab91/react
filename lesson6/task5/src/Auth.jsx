@@ -15,8 +15,10 @@ class Auth extends React.Component {
 
     onLoginPush = () => {
         this.setState({
-            onLogin: false,
+            onSpinnerOn: true,
         })
+
+        this.showSpinner()
     }
 
     onLogoutPush = () => {
@@ -25,22 +27,37 @@ class Auth extends React.Component {
         })
     }
 
+    showSpinner = () => {
+        this.setState({
+            onLogin: false,
+        });
+
+        setTimeout(() => {
+            this.setState({
+                onSpinnerOn: false,
+            });
+        }, 2000);
+    };
+
+
 
     render() {
-        let button = this.state.onSpinnerOn
-            ? <Spinner />
-            : <Logout />
+        let button = this.state.onLogin
+            ? <Login onLogin={this.onLoginPush} />
+            : <Logout onLogout={this.onLogoutPush} />
 
         return (
             <div>
                 {
-                    this.state.onLogin
-                        ? <Login onLogin={this.onLoginPush} />
-                        : { button }
+                    this.state.onSpinnerOn
+                        ? <Spinner size={50} />
+                        : button
                 }
             </div>
         )
     }
+
+
 }
 
 export default Auth;

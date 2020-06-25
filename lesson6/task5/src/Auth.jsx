@@ -8,7 +8,7 @@ class Auth extends React.Component {
         super(props);
 
         this.state = {
-            onLogin: true,
+            onLogin: false,
             onSpinnerOn: false,
         }
     }
@@ -23,13 +23,13 @@ class Auth extends React.Component {
 
     onLogoutPush = () => {
         this.setState({
-            onLogin: true,
+            onLogin: false,
         })
     }
 
     showSpinner = () => {
         this.setState({
-            onLogin: false,
+            onLogin: true,
         });
 
         setTimeout(() => {
@@ -43,8 +43,8 @@ class Auth extends React.Component {
 
     render() {
         let button = this.state.onLogin
-            ? <Login onLogin={this.onLoginPush} />
-            : <Logout onLogout={this.onLogoutPush} />
+            ? <Logout onLogout={this.onLogoutPush} />
+            : <Login onLogin={this.onLoginPush} />
 
         return (
             <div>

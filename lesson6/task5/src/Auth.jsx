@@ -1,4 +1,6 @@
 import React from 'react';
+import Login from './Login.jsx';
+import Logout from './Logout.jsx';
 
 class Auth extends React.Component {
     constructor(props) {
@@ -6,8 +8,10 @@ class Auth extends React.Component {
 
         render(){
             return (
-                
+                <Login />
             )
         }
     }
 }
+
+export default Auth;

@@ -29,8 +29,6 @@ class UserList extends React.Component {
         }
 
 
-
-
         return (
             <div>
                 <button onClick={this.toggleSorting} className="btn">

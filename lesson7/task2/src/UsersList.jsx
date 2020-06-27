@@ -25,7 +25,7 @@ class UserList extends React.Component {
                 return this.state.sorting === 'asc' ? a.age - b.age : b.age - a.age;
             })
         } else {
-            usersList = this.props.users.slice();
+            usersList = this.props.users;
         }
 
 

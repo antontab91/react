@@ -6,19 +6,32 @@ import User from './User.jsx';
 class UserList extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            sorting: null,
+        }
     }
 
-    toggleBtn() {
-        console.log('huiu')
+    toggleSorting = () => {
+        const newSorting = this.state.sorting === 'asc' ? 'desc' : 'asc';
+        this.setState({
+            sorting: newSorting
+        })
     }
 
     render() {
+
+        const usersList = this.props.users.slice().sort((a, b) => {
+            return this.state.sorting === 'asc' ? a.age - b.age : b.age - a.age;
+        })
+
         return (
             <div>
-                <button onClick={this.toggleBtn.bind(this)} className="btn">-</button>
+                <button onClick={this.toggleSorting} className="btn">
+                    {this.state.sorting || '-'}
+                </button>
                 <ul className='users'>
                     {
-                        this.props.users.map((user) => {
+                        usersList.map((user) => {
                             return <User key={user.id} name={user.name} age={user.age} />
                         })
                     }

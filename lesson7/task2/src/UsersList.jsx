@@ -47,7 +47,7 @@ import User from './User.jsx';
 
 
 
-class UsersList extends Component {
+class UsersList extends React.Component {
     constructor(props) {
         super(props);
     }

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import './index.scss';
+import TransactionsList from './TransactionsList';
 
 
 const transactions = [
@@ -30,22 +31,9 @@ const transactions = [
   },
 ];
 
-const element = transactions.map(({ id, from, to, amount, rate, time }) => {
 
-  return (
-
-    <li className='transaction'>
-      <span className="transaction__date">{id}</span>
-      <span className="transaction__time">{from}</span>
-      <span className="transaction__assets">{to}</span>
-      <span className="transaction__rate">{amount}</span>
-      <span className="transaction__amount">{rate}</span>
-    </li>
-
-  )
-})
 
 
 const root = document.querySelector('#root');
 
-ReactDOM.render(element, root)
+ReactDOM.render(<TransactionsList transactions={transactions} />, root)

@@ -30,12 +30,18 @@ class UsersList extends Component {
   render() {
     const totalIthems = this.props.users.length; // общее количество юзеров 
     const firsIndexOnCurrentPage = this.state.currentPage * this.state.itemsPerPage; // индекс первого юзера , который показывается на странице 
-    const lastIndexOnCurrentPage = firsIndexOnCurrentPage + itemsPerPage; // индекс последнего юзера , который показывается на странице 
+    const lastIndexOnCurrentPage = firsIndexOnCurrentPage + this.state.itemsPerPage; // индекс последнего юзера , который показывается на странице 
     const usersOnDisplay = this.props.users.slice(firsIndexOnCurrentPage, lastIndexOnCurrentPage); // с какого по какой индекс показываются юзеры на текущей странице
 
     return (
       <div>
-        {/* <Pagination /> */}
+        <Pagination
+          goNext={this.goNext}
+          goPrev={this.goPrev}
+          currentPage={this.state.currentPage}
+          totalItems={totalIthems}
+          itemsPerPage={usersOnDisplay}
+        />
         <ul>
           {this.props.users.map((user) => {
             return (

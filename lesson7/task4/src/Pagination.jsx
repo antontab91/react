@@ -4,7 +4,7 @@ const Pagination = ({ goPrev, goNext, currentPage, totalItems, itemsPerPage }) =
   const isPrevPageAvailable = '';
   const isNextPageAvailable = '';
   return (
-    <div>ыффы</div>
+    <div className="pagination">ыффы</div>
   );
 };
 

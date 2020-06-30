@@ -39,6 +39,7 @@ const users = [
   {
     id: 'id-6',
     name: 'Pitonchik',
+
     age: 6
   },
   {

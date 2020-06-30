@@ -40,10 +40,10 @@ class UsersList extends Component {
           goPrev={this.goPrev}
           currentPage={this.state.currentPage}
           totalItems={totalIthems}
-          itemsPerPage={usersOnDisplay}
+          itemsPerPage={this.state.itemsPerPage}
         />
         <ul>
-          {this.props.users.map((user) => {
+          {usersOnDisplay.map((user) => {
             return (
               <User key={user.id} {...user} />
             )

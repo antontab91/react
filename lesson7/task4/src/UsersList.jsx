@@ -43,7 +43,7 @@ class UsersList extends Component {
           itemsPerPage={this.state.itemsPerPage}
         />
         <ul>
-          {usersOnDisplay.map((user) => {
+          {usersOnDisplay.map((user) => {                     // применяем мап к выведенному количеству юзеров на текущей странице 
             return (
               <User key={user.id} {...user} />
             )

@@ -12,22 +12,26 @@ class UsersList extends Component {
     };
   }
 
+
   goPrev = () => {
     this.setState({
-      currentPage: currentPage - 1,
-    })
-  }
+      currentPage: this.state.currentPage - 1,
+    });
+  };
 
   goNext = () => {
     this.setState({
-      currentPage: currentPage + 1,
-    })
-  }
+      currentPage: this.state.currentPage + 1,
+    });
+  };
 
 
 
   render() {
-    const totalIthems = this.props.users.length;
+    const totalIthems = this.props.users.length; // общее количество юзеров 
+    const firsIndexOnCurrentPage = this.state.currentPage * this.state.itemsPerPage; // индекс первого юзера , который показывается на странице 
+    const lastIndexOnCurrentPage = firsIndexOnCurrentPage + itemsPerPage; // индекс последнего юзера , который показывается на странице 
+    const usersOnDisplay = this.props.users.slice(firsIndexOnCurrentPage, lastIndexOnCurrentPage); // с какого по какой индекс показываются юзеры на текущей странице
 
     return (
       <div>

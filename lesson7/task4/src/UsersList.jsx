@@ -8,38 +8,36 @@ class UsersList extends Component {
 
     this.state = {
       currentPage: 0,
-      itemsPerPage: 3,
+      itemsPerPage: 3
     };
   }
 
   goPrev = () => {
     this.setState({
-      currentPage: this.state.currentPage - 1,
-    });
+      currentPage: currentPage - 1,
+    })
   }
 
   goNext = () => {
     this.setState({
-      currentPage: this.state.currentPage + 1,
+      currentPage: currentPage + 1,
     })
   }
 
+
+
   render() {
-    const first = this.state.currentPage * this.state.itemsPerPage;
-    const last = first + this.state.itemsPerPage;
-    const usersList = this.props.users.slice(first, last);
+    const totalIthems = this.props.users.length;
+
     return (
       <div>
-        <Pagination
-          goPrev={this.goPrev}
-          goNext={this.goNext}
-          currentPage={this.state.currentPage}
-          itemsPerPage={this.state.itemsPerPage}
-          totalItems={this.props.users.length}
-        />
-        <ul className="users">
-          {usersList.map(user =>
-            <User key={user.id} {...user} />)}
+        {/* <Pagination /> */}
+        <ul>
+          {this.props.users.map((user) => {
+            return (
+              <User key={user.id} {...user} />
+            )
+          })}
         </ul>
       </div>
     );

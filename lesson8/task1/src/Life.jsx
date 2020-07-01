@@ -9,7 +9,7 @@ class Life extends React.Component {
 
   render() {
     return (
-
+      <div className="s">55</div>
     )
   }
 }

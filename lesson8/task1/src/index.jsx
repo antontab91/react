@@ -1,5 +1,7 @@
 import React from 'react';
-import ReactDON from 'react-dom';
+import ReactDOM from 'react-dom';
+import Life from './Life.jsx';
 
 const root = document.querySelector('#root');
 
+ReactDOM.render(<Life />, root)

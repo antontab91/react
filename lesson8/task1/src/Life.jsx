@@ -3,8 +3,11 @@ import React from 'react';
 class Life extends React.Component {
   constructor(props) {
     super(props);
+    console.log('constructor: good place to create state');
+  }
 
-    console.log('constructor: good place to create state')
+  componentDidMount() {
+    console.log("componentDidMount: API calls, subscriptions");
   }
 
   render() {

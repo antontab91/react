@@ -25,6 +25,10 @@ class Clock extends Component {
     }, 1000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   render() {
     return (
       // <div className="ds">{this.state.time}</div>

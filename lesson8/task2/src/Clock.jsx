@@ -17,7 +17,8 @@ class Clock extends Component {
       // location: this.props.location,
     }
     this.location = this.props.location;
-
+  }
+  componentDidMount() {
     this.interval = setInterval(() => {
       this.setState({
         time: getTimeWithOffset(this.props.offset).toLocaleTimeString('en-US')

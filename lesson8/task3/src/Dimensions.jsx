@@ -85,6 +85,7 @@ class Dimension extends React.Component {
   constructor(props) {
     super(props);
 
+
     this.state = {
       width: window.innerWidth,
       height: window.innerHeight,
@@ -95,6 +96,7 @@ class Dimension extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
+    this.setDementions(innerWidth, innerHeight);
   }
 
   componentWillUnmount() {

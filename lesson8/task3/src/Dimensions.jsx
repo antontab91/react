@@ -89,7 +89,7 @@ class Dimensions extends React.Component {
     this.state = {
       width: window.innerWidth,
       height: window.innerHeight,
-    }
+    };
 
     this.onResize = this.onResize.bind(this);  // тут втыкнул привязать контекст 
   }
@@ -108,11 +108,10 @@ class Dimensions extends React.Component {
   }
 
   setDementions(width, height) {
-
     this.setState({
       width: width,
       height: height,
-    })
+    });
 
     document.title = `${innerWidth} x ${innerHeight}`;
   }

@@ -9,7 +9,11 @@ class User extends React.Component {
   }
 
   componentDidMount() {                                            // когда мы хотим получить данные из сервера нужно это делать не до первого рендера , а уже в компонет дид маунт 
-    fetch(`https://api.github.com/users/${this.props.userId}`)
+    this.onFathUser.call(this, this.props.userId);
+  }
+
+  onFathUser(userId) {
+    fetch(`https://api.github.com/users/${userId}`)
       .then((response) => {
         return response.json();
       }).then((data) => {

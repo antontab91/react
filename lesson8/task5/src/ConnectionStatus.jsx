@@ -7,19 +7,33 @@ class ConnectionStatus extends React.Component {
     this.state = {
       status: 'online',
     }
-
-    console.log(this.state.status)
+    this.updateStatus = this.updateStatus.bind(this);
+    this.setClassStatus = this.setClassStatus.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('online', (event) => {
-      console.log(event);
-    })
+    window.addEventListener('online', this.updateStatus);
+    window.addEventListener("offline", this.updateStatus);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('online', this.updateStatus);
+    window.removeEventListener("offline", this.updateStatus);
+  }
+
+  updateStatus(event) {
+    this.setState({
+      status: event.type,
+    });
+  }
+
+  setClassStatus(status) {
+    return `status ${status === "online" ? "status_online" : "status_offline"}`
   }
 
   render() {
     return (
-      <div className="status status_offline">Offline</div>
+      <div className={this.setClassStatus(this.state.status)}>{this.state.status}</div>
     )
   }
 }

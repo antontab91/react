@@ -96,7 +96,7 @@ class Dimension extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
-    this.setDementions(innerWidth, innerHeight);
+    this.setDementions(innerWidth, innerHeight);    // Важно , а то я забываю , тут мы вызвали метод уже после того как он попал на страницу , для обновления состояния  
   }
 
   componentWillUnmount() {

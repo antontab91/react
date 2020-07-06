@@ -113,7 +113,6 @@ class Dimension extends React.Component {
       width: width,
       height: height,
     });
-
     document.title = `${innerWidth} x ${innerHeight}`;
   }
 

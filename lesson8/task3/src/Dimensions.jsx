@@ -81,7 +81,7 @@
 
 import React from 'react';
 
-class Dimensions extends React.Component {
+class Dimension extends React.Component {
   constructor(props) {
     super(props);
 
@@ -123,4 +123,4 @@ class Dimensions extends React.Component {
   }
 }
 
-export default Dimensions;
+export default Dimension;

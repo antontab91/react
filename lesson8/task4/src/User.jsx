@@ -28,7 +28,7 @@ class User extends React.Component {
       <div className="user">
         <img
           className="user__avatar"
-          src="https://avatars3.githubusercontent.com/u/69631?v=4"
+          src={this.state.user.avatar_url}
           alt="User Avatar"
         />
         <div className="user__info">

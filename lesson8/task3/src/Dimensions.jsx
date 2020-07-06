@@ -104,9 +104,14 @@ class Dimensions extends React.Component {
 
   onResize(e) {
     const { innerWidth, innerHeight } = e.target;
+    this.setDementions(innerWidth, innerHeight);
+  }
+
+  setDementions(width, height) {
+
     this.setState({
-      width: innerWidth,
-      height: innerHeight,
+      width: width,
+      height: height,
     })
 
     document.title = `${innerWidth} x ${innerHeight}`;

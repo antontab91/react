@@ -4,18 +4,19 @@ class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
-      locatiom: null,
-      avatarUrl: null,
+      user: null,
     }
   }
 
   render() {
+    if (!this.state.user) {
+      return null;
+    }
     return (
       <div className="user">
         <img
           className="user__avatar"
-          src=""
+          src="https://avatars3.githubusercontent.com/u/69631?v=4"
           alt="User Avatar"
         />
         <div className="user__info">

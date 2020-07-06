@@ -8,6 +8,18 @@ class User extends React.Component {
     }
   }
 
+  componentDidMount() {
+    fetch(`https://api.github.com/users/${this.props.userId}`)
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        return this.setState({
+          user: data,
+        });
+      });
+  }
+
   render() {
     if (!this.state.user) {
       return null;
@@ -20,8 +32,8 @@ class User extends React.Component {
           alt="User Avatar"
         />
         <div className="user__info">
-          <span className="user__name"></span>
-          <span className="user__location"></span>
+          <span className="user__name">{this.state.user.name}</span>
+          <span className="user__location">{this.state.user.location}</span>
         </div>
       </div>
     )

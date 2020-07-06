@@ -85,7 +85,6 @@ class Dimension extends React.Component {
   constructor(props) {
     super(props);
 
-
     this.state = {
       width: window.innerWidth,
       height: window.innerHeight,

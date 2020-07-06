@@ -4,6 +4,17 @@ class ConnectionStatus extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      status: 'online',
+    }
+
+    console.log(this.state.status)
+  }
+
+  componentDidMount() {
+    window.addEventListener('online', (event) => {
+      console.log(event);
+    })
   }
 
   render() {

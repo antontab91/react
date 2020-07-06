@@ -7,7 +7,13 @@ class User extends React.Component {
 
   render() {
     return (
-      <div className="cxs">dssd</div>
+      <div className="user">
+        <img className="" src="" alt="" />
+        <div className="user__info">
+          <span className="user__name" ></span>
+          <span className="user__location"></span>
+        </div>
+      </div>
     )
   }
 }

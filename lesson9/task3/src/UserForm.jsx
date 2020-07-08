@@ -9,7 +9,7 @@ class UserForm extends React.Component {
       return ({ ...acc, [name]: value })
     })
 
-    console.log(formData);
+    this.props.onSubmit(formData);
 
   }
 

@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
-const Filter = (props) => {
-  return (
-    <div className="filter">
-      <span className="filter__count">{props.count}</span>
-      <input onChange={props.onChange} type="text" className="filter__input" value={props.value} />
-    </div>
-  )
+class Filter extends React.Component {
+  render() {
+    return (
+      <>
+        <span className="filter__count">{this.props.count}</span>
+        <input
+          onChange={this.props.onChange}
+          type="text"
+          className="filter__input"
+          value={this.props.filterText}
+        />
+      </>
+    );
+  }
 }
-
 export default Filter;

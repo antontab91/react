@@ -29,7 +29,7 @@ class UsersList extends React.Component {
 
     return (
       <div>
-        <Filter handleChange={this.handleChange} value={this.state.value} count={this.state.value.length} />
+        <Filter onChange={this.handleChange} value={this.state.value} count={this.state.value.length} />
         <ul className="users">
           {usersList.map((user) => {
             return <User key={user.id} {...user} />

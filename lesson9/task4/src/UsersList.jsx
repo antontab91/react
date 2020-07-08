@@ -1,12 +1,13 @@
 import React from 'react';
 import Filter from './Filter.jsx'
+import User from './User.jsx'
 
 
 class UsersList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
     }
   }
 
@@ -19,11 +20,20 @@ class UsersList extends React.Component {
   }
 
   render() {
+
+    let usersList = this.props.users.filter((user) => {
+      return user.name.toLowerCase() === this.state.value.toLowerCase()
+    })
+
+    console.log(usersList)
+
     return (
       <div>
-        <Filter handleChange={this.handleChange} value={this.state.value} />
+        <Filter handleChange={this.handleChange} value={this.state.value} count={this.state.value.length} />
         <ul className="users">
-
+          {usersList.map((user) => {
+            return <User key={user.id} {...user} />
+          })}
         </ul>
       </div>
     )

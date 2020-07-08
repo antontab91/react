@@ -8,7 +8,7 @@ class Search extends React.Component {
     }
   }
 
-  handleChnge = (e) => {
+  handleChange = (e) => {
     let value = e.target.value;
     console.log(value)
     this.setState({
@@ -22,9 +22,9 @@ class Search extends React.Component {
 
   render() {
     return (
-      <form className="search" >
-        <input onChange={this.handleChnge} value={this.state.value} type="text" className="search__input" />
-        <button onClick={this.allertText} className="search__button">Search</button>
+      <form onSubmit={this.allertText} className="search" >
+        <input onChange={this.handleChange} value={this.state.value} type="text" className="search__input" />
+        <button className="search__button">Search</button>
       </form>
     )
   }

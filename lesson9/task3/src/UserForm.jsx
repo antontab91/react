@@ -2,11 +2,25 @@ import React from 'react';
 
 class UserForm extends React.Component {
 
+  hendleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = [...new FormData(this.formRef)].reduce((acc, [name, value]) => {
+      return ({ ...acc, [name]: value })
+    })
+
+    console.log(formData);
+
+  }
+
+  setRef = (node) => {
+    this.formRef = node;
+  }
 
   render() {
     return (
 
-      <form className="login-form">
+      <form ref={this.setRef} onSubmit={this.hendleSubmit} className="login-form">
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">Name</label>

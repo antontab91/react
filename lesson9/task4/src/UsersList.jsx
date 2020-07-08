@@ -1,42 +1,40 @@
-import React from 'react';
-import Filter from './Filter.jsx'
-import User from './User.jsx'
-
+import React from "react";
+import User from "./User";
+import Filter from "./Filter";
 
 class UsersList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: '',
-    }
-  }
+  state = {
+    filterText: "",
+    count: this.props.users.length,
+  };
 
-  handleChange = (e) => {
-    let value = e.target.value;
+  onChange = (e) => {
     this.setState({
-      value,
-    })
-    console.log(this.state.value)
-  }
+      filterText: e.target.value,
+    });
+  };
 
   render() {
-
-    let usersList = this.props.users.filter((user) => {
-      return user.name.toLowerCase() === this.state.value.toLowerCase()
-    })
-
-    console.log(usersList)
-
+    const { filterText } = this.state;
+    const usersList = this.props.users
+      .filter((user) =>
+        user.name.toLowerCase().includes(filterText.toLowerCase())
+      )
+      .map((user) => {
+        return <User key={user.id} {...user} />;
+      });
     return (
       <div>
-        <Filter onChange={this.handleChange} value={this.state.value} count={this.state.value.length} />
-        <ul className="users">
-          {usersList.map((user) => {
-            return <User key={user.id} {...user} />
-          })}
-        </ul>
+        <div className="filter">
+          <Filter
+            filterText={filterText}
+            count={usersList.length}
+            onChange={this.onChange}
+          />
+        </div>
+        <ul className="users">{usersList}</ul>
       </div>
-    )
+    );
   }
 }
 

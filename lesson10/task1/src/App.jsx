@@ -1,6 +1,6 @@
 import React from 'react';
-import UserMenu from 'UserMenu.jsx';
-import UserProfile from 'UserProfile.jsx';
+// import UserMenu from 'UserMenu.jsx';
+import UserProfile from './UserProfile.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class App extends React.Component {
         <header className="header">
           {/* <UserMenu /> */}
         </header>
-        <UserProfile userId={'github'} />
+        <UserProfile userId={`github`} />
       </div>
     )
   }

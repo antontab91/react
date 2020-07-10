@@ -1,5 +1,5 @@
 import React from 'react';
-// import UserMenu from 'UserMenu.jsx';
+import UserMenu from './UserMenu.jsx';
 import UserProfile from './UserProfile.jsx';
 
 class App extends React.Component {
@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <div className="page">
         <header className="header">
-          {/* <UserMenu /> */}
+          <UserMenu />
         </header>
         <UserProfile userId={`github`} />
       </div>

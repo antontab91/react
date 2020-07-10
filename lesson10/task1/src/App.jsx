@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <div className="page">
         <header className="header">
-          <UserMenu />
+          <UserMenu userId={`github`} />
         </header>
         <UserProfile userId={`github`} />
       </div>

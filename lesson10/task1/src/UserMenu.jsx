@@ -2,15 +2,20 @@
 
 import React from 'react';
 
-const userMenu = () => {
+const userMenu = ({ userData }) => {
+  if (!userData) {
+    return null;
+  }
+
+  const { name, avatar_url } = userData;
   return (
     <div className="menu">
       <span className="menu__greeting">
-        Hello, GitHub
+        {`Hello, ${name}`}
       </span>
       <img
         alt="User Avatar"
-        src="https://avatars1.githubusercontent.com/u/9919?v=4"
+        src={avatar_url}
         className="menu__avatar"
       />
     </div>

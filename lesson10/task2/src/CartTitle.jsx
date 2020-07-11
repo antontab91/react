@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CartTitle = () => {
+const CartTitle = ({ name, count }) => {
   return (
-    <div className="cart-title">John, you added 2 items</div>
+    <div className="cart-title">{`${name}, you added ${count} items`}</div>
   )
 }
 

@@ -31,7 +31,7 @@ class App extends React.Component {
       <div className="page">
         <h1 className="title">{`Hello, ${firstName} ${lastName}`}</h1>
         <main className="content">
-          <ShoppingCart userData={this.state.userData} />
+          <ShoppingCart userData={this.state.userData.firstName} />
           <Profile userData={this.state.userData} handleChange={this.handleChange} />
 
         </main>

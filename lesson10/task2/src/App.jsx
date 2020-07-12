@@ -6,25 +6,33 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      userData: {
+        firstName: 'John',
+        lastName: 'Doe'
+      }
+    }
+  }
 
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      userData: {
+        ...this.state.userData,                 // ЭТА ОПЦИЯ - МЫ КОПИРУЕМ СТАРОЕ СОСТОЯНИЕ 
+        [name]: value                           // А ТУТ МЕНЯЕМ ПРИ СОБЫТИИ 
+      }
+    })
   }
 
 
   render() {
+    const { firstName, lastName } = this.state.userData;
     return (
-      // <div className="main">
-      //   <main className="content">
-      //     <ShoppingCart />
-      //     <Profile />
-      //   </main>
-      // </div>
-
-
       <div className="page">
-        <h1 className="title">Hello, John Doe</h1>
+        <h1 className="title">{`Hello, ${firstName} ${lastName}`}</h1>
         <main className="content">
-          <ShoppingCart />
-          <Profile />
+          <ShoppingCart userData={this.state.userData} />
+          <Profile userData={this.state.userData} handleChange={this.handleChange} />
 
         </main>
       </div>

@@ -19,6 +19,11 @@ class ShoppingCart extends React.Component {
           name: "iPad Pro",
           price: 799,
         },
+        {
+          id: "2w",
+          name: "iPad Pro25",
+          price: 2799,
+        },
       ],
     }
   }
@@ -26,10 +31,8 @@ class ShoppingCart extends React.Component {
   render() {
     return (
       <div className="column">
-
-        <CartTitle count={this.state.cartItems.length} />
+        <CartTitle firstName={this.props.userData.firstName} count={this.state.cartItems.length} />
         <ProductList cartItems={this.state.cartItems} />
-
       </div>
     )
   }

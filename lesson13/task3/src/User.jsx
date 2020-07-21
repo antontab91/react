@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
 const url = `https://api.github.com/users`;
 
-class User extends Component {
+class User extends React.Component {
   state = {
     user: null,
   };
+
   componentDidMount() {
     this.fetchUser(this.props.match.params.userId);
   }

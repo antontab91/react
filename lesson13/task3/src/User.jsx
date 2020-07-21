@@ -1,45 +1,46 @@
 import React, { Component } from "react";
 
+const url = `https://api.github.com/users`;
+
 class User extends Component {
   state = {
-    userData: null,
+    user: null,
   };
+  componentDidMount() {
+    this.fetchUser(this.props.match.params.userId);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      this.props.match.params.userId !== prevProps.match.params.userId
+    ) {
+      this.fetchUser(this.props.match.params.userId);
+    }
+  }
 
   fetchUser = (userId) => {
-    fetch(`https://api.github.com/users/${userId}`)
+    fetch(`${url}/${userId}`)
       .then((response) => response.json())
-      .then((userData) =>
+      .then((data) =>
         this.setState({
-          userData,
+          user: data,
         })
       );
   };
 
-  componentDidMount() {
-    const { match } = this.props;
-    this.fetchUser(match.params.userId);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { match } = this.props;
-    if (match.params.userId !== prevProps.match.params.userId) {
-      this.fetchUser(match.params.userId);
-    }
-  }
-
   render() {
-    const { userData } = this.state;
-    if (!userData) return null;
+    const { user } = this.state;
+    if (!user) return null;
     return (
       <div className="user">
         <img
           alt="User Avatar"
-          src={userData.avatar_url}
+          src={user.avatar_url}
           className="user__avatar"
         />
         <div className="user__info">
-          <span className="user__name">{userData.name}</span>
-          <span className="user__location">{userData.location}</span>
+          <span className="user__name">{user.name}</span>
+          <span className="user__location">{user.location}</span>
         </div>
       </div>
     );

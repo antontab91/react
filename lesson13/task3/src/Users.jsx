@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
-import User from "./User";
+import User from "./User.jsx";
 
 const Users = () => {
   return (

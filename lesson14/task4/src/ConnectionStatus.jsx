@@ -9,10 +9,10 @@ const ConnectionStatus = () => {
     };
     window.addEventListener("online", isOnline);
 
-    const isOffline = (e) => {
-      setStatus(e.type);
-    };
-    window.addEventListener("offline", isOffline);
+    // const isOffline = (e) => {
+    //   setStatus(e.type);
+    // };
+    // window.addEventListener("offline", isOffline);
 
     return () => {
       window.removeEventListener("online", isOnline);

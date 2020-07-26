@@ -26,7 +26,6 @@ const App = () => {
           </Route>
         </Switch>
       </BrowserRouter>
-
     </div>
   )
 }

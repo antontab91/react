@@ -16,13 +16,13 @@ const App = () => {
             <Home exact path='/' />
           </Route>
           <Route>
-            <Products path='/Products' />
+            <Products path='/products' />
           </Route>
           <Route>
-            <Contacts path='/Contacts' />
+            <Contacts path='/contacts' />
           </Route>
           <Route>
-            <PageNotFound path='/PageNotFound' />
+            <PageNotFound path='*' />
           </Route>
         </Switch>
       </BrowserRouter>

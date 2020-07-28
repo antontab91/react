@@ -13,8 +13,7 @@ const Products = () => {
         </li>
       </ul>
 
-      {/* <!-- Product --> */}
-      <div className="product">ball</div>
+
     </div>
   )
 }

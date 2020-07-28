@@ -1,38 +1,29 @@
 import React from 'react';
+import Home from './Home';
+import Products from './Products'
+import { BrowserRouter, Link, } from 'react-router-dom'
 
 const App = () => {
   return (
     <div className="page">
-      <ul className="navigation">
-        <li className="navigation__item">
-          <a href="/">Home</a>
-        </li>
-        <li className="navigation__item">
-          <a href="/products">Products</a>
-        </li>
-      </ul>
-
-      {/* <!-- Home --> */}
-      <div className="page__content">
-        <h1>🏠</h1>
-      </div>
-
-      {/* <!-- Products --> */}
-      <div className="page__content">
-        <h1>Products</h1>
+      <BrowserRouter>
         <ul className="navigation">
           <li className="navigation__item">
-            <a href="/products/book">Book</a>
+            <a href="/">Home</a>
           </li>
           <li className="navigation__item">
-            <a href="/products/ball">Ball</a>
+            <a href="/products">Products</a>
           </li>
         </ul>
 
-        {/* <!-- Product --> */}
-        <div className="product">ball</div>
-      </div>
+
+        <Home />
+
+
+        <Products />
+      </BrowserRouter>
     </div>
+
   )
 }
 

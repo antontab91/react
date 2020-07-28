@@ -18,10 +18,10 @@ const App = () => {
 
 
         <Home />
-
-
         <Products />
+
       </BrowserRouter>
+
     </div>
 
   )

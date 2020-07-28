@@ -9,17 +9,18 @@ const App = () => {
       <BrowserRouter>
         <ul className="navigation">
           <li className="navigation__item">
-            <a href="/">Home</a>
+
+            <Link to="/">Home</Link>
           </li>
           <li className="navigation__item">
-            <a href="/products">Products</a>
+            <Link to="/products">Products</Link>
           </li>
         </ul>
 
         <Route exact path="/" >
           <Home />
         </Route>
-        <Route path="/home">
+        <Route path="/products">
           <Products />
         </Route>
 

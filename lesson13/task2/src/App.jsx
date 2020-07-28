@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './Home';
 import Products from './Products'
-import { BrowserRouter, Link, } from 'react-router-dom'
+import { BrowserRouter, Route, Link, } from 'react-router-dom'
 
 const App = () => {
   return (
@@ -16,9 +16,14 @@ const App = () => {
           </li>
         </ul>
 
+        <Route exact path='/' >
+          <Home />
+        </Route>
+        <Route path='/home'>
+          <Products />
+        </Route>
 
-        <Home />
-        <Products />
+
 
       </BrowserRouter>
 

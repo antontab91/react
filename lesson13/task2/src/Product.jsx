@@ -1,10 +1,7 @@
-import React from 'react';
+import React from "react";
 
-
-const Product = () => {
-  return (
-    <div className="product">ball</div>
-  )
-}
+const Product = ({ match }) => {
+  return <div className="product">{match.params.productId}</div>;
+};
 
 export default Product;

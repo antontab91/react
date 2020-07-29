@@ -2,19 +2,19 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Product from './Product';
 
-const Products = ({ ...rest }) => {
-  console.log(rest)
+const Products = ({ match }) => {
+  console.log(match)
   return (
     <div className="page__content">
       <h1>Products</h1>
       <ul className="navigation">
         <li className="navigation__item">
 
-          <Link to="/products/ball">Ball</Link>
+          <Link to={`${match.url}/ball`}>Ball</Link>
         </li>
         <li className="navigation__item">
 
-          <Link to="/products/book">Book</Link>
+          <Link to={`${match.url}/book`}>Book</Link>
         </li>
 
       </ul>

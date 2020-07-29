@@ -3,6 +3,7 @@ import User from './User.jsx'
 
 const Users = () => {
   return (
+
     <div className="page__content">
       <h1>Users</h1>
       <ul className="navigation">

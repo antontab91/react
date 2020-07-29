@@ -2,7 +2,7 @@ import React from 'react';
 import User from './User.jsx'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
-const Users = () => {
+const Users = ({ match }) => {
   return (
 
     <div className="page__content">
@@ -10,11 +10,10 @@ const Users = () => {
       <ul className="navigation">
         <li className="navigation__item">
 
-          <Link to="/users/github">Github</Link>
+          <Link to={`${match.url}/github`}>Github</Link>
         </li>
         <li className="navigation__item">
-
-          <Link to="/users/facebook">Facebook</Link>
+          <Link to={`${match.url}/facebook`}>Facebook</Link>
         </li>
       </ul>
       <Switch>

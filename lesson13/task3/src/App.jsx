@@ -22,8 +22,8 @@ const App = () => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/users" component={Users}>
+            {/* < Users/> */}
           </Route>
         </Switch>
       </BrowserRouter>

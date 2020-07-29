@@ -20,6 +20,7 @@ const App = () => {
             <Home />
           </Route>
           <Route path="/products" component={Products} />
+          {/* // БЛЯ АНТОХА ВСЮ НОЧЬ ОТМУЧАЛСЯ ВТЫКНУЛ ПИЗДА ТУТ НЕ ХУЯ НЕ ПЕРЕДАЕТСЯ БЛЯТЬ !!!! ПЕРЕДАЕТСЯ В КОМПОНЕНТ СУКА ЧИТАЙ КОДА И НЕ ЛУПИСЬ В ГЛАЗА  */}
         </Switch>
       </BrowserRouter>
     </div>

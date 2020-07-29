@@ -19,6 +19,7 @@ const Products = ({ match }) => {
           <span>Select a product please</span>
         </Route>
         <Route path={`${match.url}/:productId`} component={Product} />
+        {/* // БЛЯ АНТОХА ВСЮ НОЧЬ ОТМУЧАЛСЯ ВТЫКНУЛ ПИЗДА ТУТ НЕ ХУЯ НЕ ПЕРЕДАЕТСЯ БЛЯТЬ !!!! ПЕРЕДАЕТСЯ В КОМПОНЕНТ СУКА ЧИТАЙ КОДА И НЕ ЛУПИСЬ В ГЛАЗА  */}
       </Switch>
     </div>
   );

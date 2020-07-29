@@ -19,7 +19,9 @@ const App = () => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/products" component={Products} />
+          <Route path="/products" component={Products} >
+            {/* // БЛЯ АНТОХА ВСЮ НОЧЬ ОТМУЧАЛСЯ ВТЫКНУЛ ПИЗДА ТУТ НЕ ХУЯ НЕ ПЕРЕДАЕТСЯ БЛЯТЬ !!!! ПЕРЕДАЕТСЯ В КОМПОНЕНТ СУКА ЧИТАЙ КОДА И НЕ ЛУПИСЬ В ГЛАЗА  */}
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>

@@ -25,7 +25,7 @@ class UserForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmit(this.state)
+    this.props.onSubmit(this.state)  // это та функция что мы передаем из родительской компоненты 
   }
 
   render() {

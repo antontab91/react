@@ -1,8 +1,10 @@
 import React from "react";
 
 class OddNumbers extends React.Component {
-    constructor(props) {
-        super(props)
+
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.number % 2 !== 0
     }
 
     render() {

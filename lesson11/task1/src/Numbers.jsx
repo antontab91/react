@@ -1,9 +1,12 @@
 import React from "react";
 
 class Numbers extends React.Component {
-    constructor(props) {
-        super(props)
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log(nextProps.number);
+        console.log(this.props.number);
+        return this.props.number !== nextProps.number && this.props.title === nextProps.title;
     }
+
 
     render() {
         return (

@@ -15,15 +15,13 @@ class App extends React.Component {
     render() {
         return (
             <div className="app">
-                {/* <!-- OddNumbers --> */}
+
                 <OddNumbers title="All numbers" number={this.state.number} />
 
-                {/* <!-- EvenNumbers --> */}
                 <EvenNumbers title="All numbers" number={this.state.number} />
-                {/* <!-- Numbers --> */}
+
                 <Numbers title="All numbers" number={this.state.number} />
 
-                {/* <!-- Numbers --> */}
                 <Numbers title="All numbers" number={this.state.number} />
 
             </div>

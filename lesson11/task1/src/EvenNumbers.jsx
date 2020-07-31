@@ -3,7 +3,7 @@ import React from "react";
 class EvenNumbers extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {
-        return this.props.number % 2 === 0
+        return this.props.number % 2 !== 0
     }
 
     render() {

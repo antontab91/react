@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Dialog from './Dialog';
 
 class App extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             isOpen: false,
@@ -20,8 +20,9 @@ class App extends Component {
             isOpen: true,
         });
     }
-    
+
     render() {
+
         const elem = (
             <p>Some text</p>
         );
@@ -29,12 +30,12 @@ class App extends Component {
             <div className="app">
                 <button className="btn"
                     onClick={this.showDialog}>
-                        show
+                    show
                 </button>
-                <Dialog isOpen={this.state.isOpen} 
+                <Dialog isOpen={this.state.isOpen}
                     onClose={this.hideDialog}
                     title="some title">
-                        {elem}
+                    {elem}
                 </Dialog>
             </div>
         );

@@ -19,6 +19,7 @@ class Expand extends Component {
         const button = this.state.isOpen ?
             (<i className="fas fa-angle-up"></i>) :
             (<i className="fas fa-angle-down"></i>);
+
         const content = this.state.isOpen &&
             (<div className="expand__content">
                 {this.props.children}

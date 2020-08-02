@@ -10,28 +10,28 @@ class App extends React.Component {
         }
     }
 
-    handleOpen = () => {
-        this.setState({
-            isOpen: true,
-        })
-    }
-
-    handleClose = () => {
+    hideDialog = () => {
         this.setState({
             isOpen: false,
-        })
-    }
+        });
+    };
+
+    showDialog = () => {
+        this.setState({
+            isOpen: true,
+        });
+    };
 
     render() {
         const elem = <p>Use immutable array methods to work with data. It will help to avoid bugs</p>;
 
         return (
             <div className="app" >
-                <button onClick={this.handleOpen} className="btn">Show dialog</button>
+                <button onClick={this.showDialog} className="btn">Show dialog</button>
                 <Dialog
                     title="some Text"
                     isOpen={this.state.isOpen}
-                    handleClose={this.handleClose}
+                    onClose={this.hideDialog}
                 >
                     {elem}
                 </Dialog>

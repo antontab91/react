@@ -6,49 +6,42 @@ class Expand extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: false
+            isOpen: true
         };
     }
 
-    showContent = () =>
+    toggleContent = () => {
         this.setState({
-            isOpen: !this.state.isOpen,
-        });
+            isOpen: !this.state.isOpen
+        })
+    }
+
 
     render() {
         const button = this.state.isOpen ?
-            (<i className="fas fa-angle-up"></i>) :
-            (<i className="fas fa-angle-down"></i>);
 
-        const content = this.state.isOpen &&
-            (<div className="expand__content">
-                {this.props.children}
-            </div>);
+            <i className="fas fa-chevron-down"></i>
+            :
+            <i className="fas fa-chevron-up"></i>
+
+
+        const content = this.state.isOpen ? this.props.children : null
 
         return (
             <div className="expand border">
                 <div className="expand__header">
-                    <span className="expand__title">
-                        {this.props.title}
-                    </span>
-                    <button className="expand__toggle-btn"
-                        onClick={this.showContent}>
+                    <span className="expand__title">Some title</span>
+                    <button onClick={this.toggleContent} className="expand__toggle-btn">
                         {button}
                     </button>
                 </div>
-                {content}
+                <div className="expand__content">
+                    {content}
+                </div>
             </div>
         );
     }
+
 }
-
-Expand.propTypes = {
-    title: PropTypes.string,
-    children: PropTypes.element.isRequired,
-};
-
-Expand.defaultProps = {
-    title: 'Some title',
-};
 
 export default Expand;

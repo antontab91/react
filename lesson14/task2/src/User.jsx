@@ -19,7 +19,7 @@ class User extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     // console.log(prevProps.match.params.userId)  // те что были до этого 
     // console.log(this.props.match.params.userId) // те которые мы сейчас передали 
-    if (this.props.match.params.userId !== prevProps.match.params.userId) {  //если те что мы сейчас передели не равны с теми что были до этого тогда перерендериваем  
+    if (this.props.match.params.userId !== prevProps.match.params.userId) {  //если те пропсы  что мы сейчас получили в компоненту не равны с теми что были до этого тогда перерендериваем  
       this.fetchUserData()
     }
   }

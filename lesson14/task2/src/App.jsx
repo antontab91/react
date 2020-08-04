@@ -20,10 +20,10 @@ const App = () => {
             </li>
           </ul>
           <Switch>
-            <Route path="/users/:userId" component={User} ></Route>
-            <Route exact path="/users/" >
+            <Route exact path="/users">
               <span>Select a user please</span>
             </Route>
+            <Route path="/users/:userId" component={User} ></Route>
           </Switch>
         </div>
       </BrowserRouter>

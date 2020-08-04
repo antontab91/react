@@ -44,6 +44,8 @@ import React, { useState } from "react";
 const Counter = () => {
   const [number, changeNumder] = useState(0);
 
+  // console.log(useState(0))
+
   return (
     <div className="counter">
       <button onClick={() => { changeNumder(number - 1) }} className="counter__button">
@@ -56,7 +58,7 @@ const Counter = () => {
 
       <button onClick={() => { changeNumder(number + 1) }} className="counter__button">
         +
-        </button>
+      </button>
     </div>
   )
 }

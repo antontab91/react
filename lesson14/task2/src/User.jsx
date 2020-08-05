@@ -31,6 +31,7 @@ const User = ({ match }) => {
     </div>
   )
 }
+export default User;
 
 
 // class User extends React.Component {
@@ -88,4 +89,4 @@ const User = ({ match }) => {
 //   }
 // }
 
-export default User;
+// export default User;

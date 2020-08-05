@@ -5,10 +5,29 @@ class Dimensions extends React.Component {
     super(props);
 
     this.state = {
-      width: null,
-      height: null,
+      width: window.innerWidth,
+      height: window.innerHeight,
     }
+  }
 
+  componentWillMount() {
+    window.addEventListener('resize', this.onResize)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize)
+  }
+
+  onResize = (e) => {
+    const { innerWidth, innerHeight } = e.target;
+    this.setDimensions(innerWidth, innerHeight)
+  }
+
+  setDimensions = (width, height) => {
+    this.setState({
+      width: width,
+      height: height,
+    });
   }
 
   render() {

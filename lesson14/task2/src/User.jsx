@@ -1,61 +1,91 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const url = `https://api.github.com/users`;
 
 
-class User extends React.Component {
-  constructor(props) {
-    super(props);
+const User = ({ match }) => {
 
-    this.state = {
-      user: null,
-    }
-  }
+  const [userData, setUserData] = useState(null);
 
-  componentDidMount() {
-    this.fetchUserData()
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    // console.log(prevProps.match.params.userId)  // те что были до этого 
-    // console.log(this.props.match.params.userId) // те которые мы сейчас передали 
-    if (this.props.match.params.userId !== prevProps.match.params.userId) {  //если те пропсы  что мы сейчас получили в компоненту не равны с теми что были до этого тогда перерендериваем  
-      this.fetchUserData()
-    }
-  }
-
-
-
-  fetchUserData() {
-    const user = this.props.match.params.userId;
-    // console.log(user);
-    fetch(`${url}/${user}`)
+  useEffect(() => {
+    fetch(`${url}/${match.params.userId}`)
       .then((responce) => {
         return responce.json()
       })
-      .then((user) => {
-        return this.setState({
-          user: user,
-        })
+      .then((userData) => {
+        return setUserData(userData)
       })
+  }, [match.params.userId]);
+
+
+  if (!userData) {
+    return null;
   }
-
-  render() {
-    const { user } = this.state
-
-    if (!user) {
-      return null;
-    }
-    return (
-      <div className="user">
-        <img alt="User Avatar" src={user.avatar_url} className="user__avatar" />
-        <div className="user__info">
-          <span className="user__name">{user.name}</span>
-          <span className="user__location">{user.location}</span>
-        </div>
+  return (
+    <div className="user">
+      <img alt="User Avatar" src={userData.avatar_url} className="user__avatar" />
+      <div className="user__info">
+        <span className="user__name">{userData.name}</span>
+        <span className="user__location">{userData.location}</span>
       </div>
-    )
-  }
+    </div>
+  )
 }
+
+
+// class User extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       user: null,
+//     }
+//   }
+
+//   componentDidMount() {
+//     this.fetchUserData()
+//   }
+
+//   componentDidUpdate(prevProps, prevState) {
+//     // console.log(prevProps.match.params.userId)  // те что были до этого 
+//     // console.log(this.props.match.params.userId) // те которые мы сейчас передали 
+//     if (this.props.match.params.userId !== prevProps.match.params.userId) {  //если те пропсы  что мы сейчас получили в компоненту не равны с теми что были до этого тогда перерендериваем  
+//       this.fetchUserData()
+//     }
+//   }
+
+
+
+//   fetchUserData() {
+//     const user = this.props.match.params.userId;
+//     // console.log(user);
+//     fetch(`${url}/${user}`)
+//       .then((responce) => {
+//         return responce.json()
+//       })
+//       .then((user) => {
+//         return this.setState({
+//           user: user,
+//         })
+//       })
+//   }
+
+//   render() {
+//     const { user } = this.state
+
+//     if (!user) {
+//       return null;
+//     }
+//     return (
+//       <div className="user">
+//         <img alt="User Avatar" src={user.avatar_url} className="user__avatar" />
+//         <div className="user__info">
+//           <span className="user__name">{user.name}</span>
+//           <span className="user__location">{user.location}</span>
+//         </div>
+//       </div>
+//     )
+//   }
+// }
 
 export default User;

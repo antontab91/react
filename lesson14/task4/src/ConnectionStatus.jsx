@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 
 const ConnectionStatus = () => {
+
   const [status, setStatus] = useState("online");
 
-  const setClassStatus = () => {
-    return `status ${status === "online" ? "status_online" : "status_offline"}`
-  }
 
-  const updateStatus = (event) => {
-    setStatus(event.type)
+
+  const updateStatus = (e) => {
+    setStatus(e.type)
   }
 
   useEffect(() => {
@@ -21,10 +20,12 @@ const ConnectionStatus = () => {
     };
   }, []);
 
-
+  const setClassStatus = () => {
+    return `status ${status === "online" ? "status_online" : "status_offline"}`
+  }
 
   return (
-    <div className={setClassStatus()}>{status}</div>
+    <div className={setClassStatus()} >{status}</div>
   )
 }
 

@@ -10,26 +10,60 @@ const getTime = (timezone) => {
   return locationTimeZone;
 };
 
-const Clock = ({ location, offset }) => {
-  const [cityTime, setTime] = useState(
-    getTime(offset).toLocaleTimeString("en-US")
-  );
+class Clock extends React.Component {
+  constructor(props) {
+    super(props)
 
-  useEffect(() => {
-    const timerId = setInterval(() => {
-      setTime(getTime(offset).toLocaleTimeString("en-US"));
-    }, 1000);
-    return () => {
-      clearInterval(timerId);
-    };
-  }, []);
+    this.state = {
+      cityTime: getTime(this.props.offset).toLocaleTimeString("en-US"),
+    }
+  }
 
-  return (
-    <div className="clock">
-      <div className="clock__location">{location}</div>
-      <div className="clock__time">{cityTime}</div>
-    </div>
-  );
-};
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState({
+        cityTime: getTime(this.props.offset).toLocaleTimeString("en-US")
+      })
+    }, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return (
+      <div className="clock">
+        <div className="clock__location">{this.props.location}</div>
+        <div className="clock__time">{this.state.cityTime}</div>
+      </div>
+    )
+  }
+}
 
 export default Clock;
+
+
+// const Clock = ({ location, offset }) => {
+//   const [cityTime, setTime] = useState(
+//     getTime(offset).toLocaleTimeString("en-US")
+//   );
+
+//   useEffect(() => {
+//     const timerId = setInterval(() => {
+//       setTime(getTime(offset).toLocaleTimeString("en-US"));
+//     }, 1000);
+//     return () => {
+//       clearInterval(timerId);
+//     };
+//   }, []);
+
+//   return (
+//     <div className="clock">
+//       <div className="clock__location">{location}</div>
+//       <div className="clock__time">{cityTime}</div>
+//     </div>
+//   );
+// };
+
+// export default Clock;
